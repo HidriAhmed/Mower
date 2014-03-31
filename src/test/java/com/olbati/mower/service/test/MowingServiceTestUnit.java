@@ -8,6 +8,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.olbati.mower.domain.Orientation;
 import com.olbati.mower.domain.Point;
 import com.olbati.mower.domain.Position;
 import com.olbati.mower.service.MowingService;
@@ -22,8 +23,10 @@ public class MowingServiceTestUnit {
 	@Before
 	public void init() {
 		mower = new MowingService(CONFIG_FILE_PATH);
-		Position expectedFinalPosition1 = new Position(new Point(0, 0), "G");
-		Position expectedFinalPosition2 = new Position(new Point(0, 0), "D");
+		Position expectedFinalPosition1 = new Position(new Point(3, 2),
+				Orientation.WEST);
+		Position expectedFinalPosition2 = new Position(new Point(7, 2),
+				Orientation.NORTH);
 
 		expectedFinalPositions.add(expectedFinalPosition1);
 		expectedFinalPositions.add(expectedFinalPosition2);
