@@ -8,9 +8,9 @@ package com.olbati.mower.domain;
 public class Position {
 
 	private Point point;
-	private String orientation;
+	private Orientation orientation;
 
-	public Position(Point point, String orientation) {
+	public Position(Point point, Orientation orientation) {
 		super();
 		this.point = point;
 		this.orientation = orientation;
@@ -24,11 +24,11 @@ public class Position {
 		this.point = point;
 	}
 
-	public String getOrientation() {
+	public Orientation getOrientation() {
 		return orientation;
 	}
 
-	public void setOrientation(String orientation) {
+	public void setOrientation(Orientation orientation) {
 		this.orientation = orientation;
 	}
 
@@ -57,10 +57,7 @@ public class Position {
 		if (getClass() != obj.getClass())
 			return false;
 		Position other = (Position) obj;
-		if (orientation == null) {
-			if (other.orientation != null)
-				return false;
-		} else if (!orientation.equals(other.orientation))
+		if (orientation != other.orientation)
 			return false;
 		if (point == null) {
 			if (other.point != null)
